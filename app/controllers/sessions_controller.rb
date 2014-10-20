@@ -16,13 +16,13 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out
-    redirect_to root_path
+    redirect_to new_session_path
   end
 
   private
 
   def session_params
-    params.require(:session).permit(:email, :password)
+    params.require(:session).permit(:username, :password)
   end
 end
 

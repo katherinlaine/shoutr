@@ -1,0 +1,6 @@
+<h1><%= current_user.username %>'s Dashboard</h1>
+
+<% current_user.shouts.each do |shout| %>
+  <%= shout.content %>
+<% end %>
+
