@@ -1,0 +1,11 @@
+<h1>NEW SHOUT</h1>
+
+<%= form_for @shout do |f| %>
+  <div>
+    <%= f.label :content, "SHOUT HERE" %>
+    <%= f.text_field :content %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
