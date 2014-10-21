@@ -1,5 +1,5 @@
 <p>
-  <div><%= shout.content %></div>
+  <%= render shout.content %>
   <div>shouted by <%= shout.username %></div>
   <div>shouted at <%= time_ago_in_words(shout.created_at) %></div>
 </p>

@@ -2,6 +2,19 @@
 
 <%= render "applications/followers" %>
 
-<%= button_to "SHOUT!!!!!", new_shout_path, method: :get %>
-<%= render current_user.shouts %>
+<%= form_for @text_shout do |f| %>
+  <%= f.label :body, "Shout here:" %>
+  <%= f.text_field :body %>
+  <%= f.submit %>
+<% end %> 
+
+<%= form_for @photo_shout do |f| %>
+  <%= f.label :url, "Pictcha Shout Here:" %>
+  <%= f.text_field :url %>
+  <%= f.submit %>
+<% end %>
+
+<h2> Timeline </h2>
+
+<%= render current_user.timeline %>
 
