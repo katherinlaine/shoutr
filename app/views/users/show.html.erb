@@ -1,0 +1,10 @@
+<h1><%= @user.username %>'s profile!</h1>
+
+<%= render "applications/followers" %>
+<% if @user.followers.include?(current_user) %>
+  <%= button_to "UNFOLLOW", unfollow_user_path(@user), method: :delete %>
+<% else %>
+  <%= button_to "FOLLOW", follow_user_path(@user) %>
+<% end %>
+<%= render @user.shouts %> 
+

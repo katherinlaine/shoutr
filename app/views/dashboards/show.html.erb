@@ -1,6 +1,7 @@
 <h1><%= current_user.username %>'s Dashboard</h1>
 
-<% current_user.shouts.each do |shout| %>
-  <%= shout.content %>
-<% end %>
+<%= render "applications/followers" %>
+
+<%= button_to "SHOUT!!!!!", new_shout_path, method: :get %>
+<%= render current_user.shouts %>
 
