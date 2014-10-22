@@ -1,5 +1,5 @@
 <p>
   <%= render shout.content %>
-  <div>shouted by <%= shout.username %></div>
+  <div>shouted by <%= link_to shout.username, user_path(shout.username) %></div>
   <div>shouted at <%= time_ago_in_words(shout.created_at) %></div>
 </p>

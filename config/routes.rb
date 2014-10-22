@@ -10,7 +10,9 @@ Rails.application.routes.draw do
       delete "unfollow" => "follows#destroy"
     end
   end
-  resources :shouts, only: [:new, :create, :show]
+
+  resources :text_shouts, only: [:create]
+  resources :photo_shouts, only: [:create]
 
   constraints Monban::Constraints::SignedIn.new do
     root "dashboards#show", as: :dashboard

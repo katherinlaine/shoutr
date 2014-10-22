@@ -16,4 +16,14 @@ class User < ActiveRecord::Base
     foreign_key: "followee_id"
 
   has_many :followers, through: :follower_relationships
+
+  def timeline
+    Shout.where(user_id: timeline_author_ids).order(created_at: :desc)
+  end
+
+  private
+
+  def timeline_author_ids
+    [id] + followee_ids
+  end
 end
