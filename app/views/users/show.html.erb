@@ -6,5 +6,5 @@
 <% else %>
   <%= button_to "FOLLOW", follow_user_path(@user) %>
 <% end %>
-<%= render @user.shouts.order(created_at: :desc) %> 
+<%= render @shouts %> 
 

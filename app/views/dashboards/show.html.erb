@@ -16,5 +16,6 @@
 
 <h2> Timeline </h2>
 
-<%= render current_user.timeline %>
+<%= render @shouts %>
+<%= paginate @shouts %>
 
