@@ -17,6 +17,13 @@ class User < ActiveRecord::Base
 
   has_many :followers, through: :follower_relationships
 
+  has_many :likes
+  has_many :liked_shouts, through: :likes, source: :shout
+
+  def to_param
+    username
+  end
+
   def timeline
     Shout.where(user_id: timeline_author_ids).order(created_at: :desc)
   end

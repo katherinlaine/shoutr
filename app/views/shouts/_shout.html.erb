@@ -3,3 +3,12 @@
   <div>shouted by <%= link_to shout.username, user_path(shout.username) %></div>
   <div>shouted at <%= time_ago_in_words(shout.created_at) %></div>
 </p>
+
+<p>
+  <% if current_user.liked_shouts.include?(shout) %>
+    <%= button_to "Unlike Shout", shout_like_path(shout), method: :delete %>
+  <% else %>
+    <%= button_to "Like Shout", shout_like_path(shout) %>
+  <% end %>
+  <%= pluralize(shout.likes.count, "like") %>
+</p>

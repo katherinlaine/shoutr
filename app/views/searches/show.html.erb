@@ -1,0 +1,9 @@
+<h1>Search Results for "<%= params[:query] %>"</h1>
+
+<%= render @shouts %>
+
+<% if @users.present? %>
+  <%= render @users %>
+<% else %>
+  <p>No user results</p>
+<% end %> 

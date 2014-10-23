@@ -13,6 +13,11 @@ Rails.application.routes.draw do
 
   resources :text_shouts, only: [:create]
   resources :photo_shouts, only: [:create]
+  resource :search, only: [:show]
+
+  resources :shouts, only: [] do
+    resource :like, only: [:create, :destroy]
+  end
 
   constraints Monban::Constraints::SignedIn.new do
     root "dashboards#show", as: :dashboard
