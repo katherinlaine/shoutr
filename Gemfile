@@ -15,3 +15,7 @@ gem 'monban'
 gem 'monban-generators'
 
 gem 'kaminari'
+
+group :development do
+  gem 'letter_opener'
+end
